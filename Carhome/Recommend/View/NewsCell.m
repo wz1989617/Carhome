@@ -29,6 +29,7 @@
     self.timeLabei.text = _model.time;
     self.commentLabei.text = _model.replycount;
     self.titleImageView = [UIImage imageNamed:_model.smallpic];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

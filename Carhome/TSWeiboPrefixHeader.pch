@@ -13,7 +13,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import "RequestURL.h"
-#import "HTHorizontalSelectionList.h"
+
 #define TScreenWidth [UIScreen mainScreen].bounds.size.width
 #define TScreenHeight [UIScreen mainScreen].bounds.size.height
 #import "SUNSlideSwitchView.h"
