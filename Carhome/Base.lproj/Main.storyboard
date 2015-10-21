@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Uek-xu-dKY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="MeP-hx-0c7">
             <objects>
-                <tabBarController id="Uek-xu-dKY" sceneMemberID="viewController">
+                <tabBarController id="Uek-xu-dKY" customClass="TSTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Orr-kV-dC4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -26,24 +26,15 @@
             </objects>
             <point key="canvasLocation" x="-244" y="18"/>
         </scene>
-        <!--View Controller-->
+        <!--News View Controller-->
         <scene sceneID="2F6-js-ZLw">
             <objects>
-                <viewController id="8a5-cv-tav" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="31D-aC-WhV"/>
-                        <viewControllerLayoutGuide type="bottom" id="Up9-2u-LY9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BKT-Li-Urj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                <viewController id="8a5-cv-tav" customClass="NewsViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="item01" id="7rc-YV-lza"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaN-Hf-A78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-923" y="766"/>
+            <point key="canvasLocation" x="-823" y="766"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CEc-dS-uu4">
@@ -62,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiO-oA-Vkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-555" y="766"/>
+            <point key="canvasLocation" x="-484" y="766"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FXt-Bd-GQk">
