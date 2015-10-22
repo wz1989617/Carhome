@@ -7,13 +7,9 @@
 //
 
 #import "RecommendViewController.h"
-#import "NewestViewController.h"
-#import "NewsflashViewController.h"
-#import "VideoViewController.h"
 
-@interface RecommendViewController (){
-    NSMutableArray *_viewController;
-}
+
+@interface RecommendViewController ()
 
 @end
 
@@ -25,54 +21,60 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
-    _viewController = [NSMutableArray array];
     
-    NewestViewController *newest = [[NewestViewController alloc] init];
-    newest.title = @"最新";
-    _viewController[0] = newest;
-    NewsflashViewController *newestFlash = [[NewsflashViewController alloc] init];
-    newestFlash.title = @"快报";
-    _viewController[1] = newestFlash;
-    VideoViewController *video = [[VideoViewController alloc] init];
-    video.title = @"视频";
-    _viewController[2] = video;
-    VideoViewController *news = [[VideoViewController alloc] init];
-    news.title = @"新闻";
-    _viewController[3] = news;
-    VideoViewController *evaluating = [[VideoViewController alloc] init];
-    evaluating.title = @"评测";
-    _viewController[4] = evaluating;
-    VideoViewController *shopping = [[VideoViewController alloc] init];
-    shopping.title = @"导购";
-    _viewController[5] = shopping;
-    VideoViewController *market = [[VideoViewController alloc] init];
-    market.title = @"行情";
-    _viewController[6] = market;
-    VideoViewController *car = [[VideoViewController alloc] init];
-    car.title = @"用车";
-    _viewController[7] = car;
-    VideoViewController *technology = [[VideoViewController alloc] init];
-    technology.title = @"技术";
-    _viewController[8] = technology;
-    VideoViewController *culture = [[VideoViewController alloc] init];
-    culture.title = @"文化";
-    _viewController[9] = culture;
-    VideoViewController *refit = [[VideoViewController alloc] init];
-    refit.title = @"改装";
-    _viewController[10] = refit;
-    VideoViewController *travelNotes = [[VideoViewController alloc] init];
-    travelNotes.title = @"游记";
-    _viewController[11] = travelNotes;
-    VideoViewController *originalVideo = [[VideoViewController alloc] init];
-    originalVideo.title = @"原创视频";
-    _viewController[12] = originalVideo;
-    VideoViewController *persuader = [[VideoViewController alloc] init];
-    persuader.title = @"说客";
-    _viewController[13] = persuader;
+
+    self.slideSwitchView.tabItemNormalColor = [UIColor grayColor];
+    self.slideSwitchView.tabItemSelectedColor = [UIColor blueColor];
+    self.slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]
+                                        stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
+    
+    
+    self.newest = [[NewestViewController alloc] init];
+    self.newest.title = @"最新";
+    
+    self.newestFlash = [[NewsflashViewController alloc] init];
+    self.newestFlash.title = @"快报";
+
+    self.video = [[VideoViewController alloc] init];
+    self.video.title = @"视频";
+
+    self.news = [[VideoViewController alloc] init];
+    self.news.title = @"新闻";
+
+    self.evaluating = [[VideoViewController alloc] init];
+    self.evaluating.title = @"评测";
+
+    self.shopping = [[VideoViewController alloc] init];
+    self.shopping.title = @"导购";
+
+    self.market = [[VideoViewController alloc] init];
+    self.market.title = @"行情";
+
+    self.car = [[VideoViewController alloc] init];
+    self.car.title = @"用车";
+
+    self.technology = [[VideoViewController alloc] init];
+    self.technology.title = @"技术";
+
+    self.culture = [[VideoViewController alloc] init];
+    self.culture.title = @"文化";
+
+    self.refit = [[VideoViewController alloc] init];
+    self.refit.title = @"改装";
+
+    self.travelNotes = [[VideoViewController alloc] init];
+    self.travelNotes.title = @"游记";
+
+    self.originalVideo = [[VideoViewController alloc] init];
+    self.originalVideo.title = @"原创视频";
+
+    self.persuader = [[VideoViewController alloc] initWithNibName:@"VideoViewController" bundle:nil];
+    self.persuader.title = @"说客";
+
     
     UIButton *rightSideButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightSideButton setImage:[UIImage imageNamed:@"bar_btn_icon_search.png"] forState:UIControlStateNormal];
-    rightSideButton.frame = CGRectMake(0, 0, 20.0f, 44.0f);
+    rightSideButton.frame = CGRectMake(0, 0, 44.0f, 44.0f);
     rightSideButton.userInteractionEnabled = NO;
     self.slideSwitchView.rigthSideButton = rightSideButton;
     
@@ -83,19 +85,92 @@
 
 - (NSUInteger)numberOfTab:(SUNSlideSwitchView *)view
 {
-    return _viewController.count;
+    return 14;
 }
 
 - (UIViewController *)slideSwitchView:(SUNSlideSwitchView *)view viewOfTab:(NSUInteger)number
 {
-    return _viewController[number];
+    if (number == 0) {
+        return self.newest;
+    } else if (number == 1){
+        return self.newestFlash;
+    } else if (number == 2){
+        return self.video;
+    } else if (number == 3){
+        return self.news;
+    } else if (number == 4){
+        return self.evaluating;
+    } else if (number == 5){
+        return self.shopping;
+    } else if (number == 6){
+        return self.market;
+    } else if (number == 7){
+        return self.car;
+    } else if (number == 8){
+        return self.technology;
+    } else if (number == 9){
+        return self.culture;
+    } else if (number == 10){
+        return self.refit;
+    } else if (number == 11){
+        return self.travelNotes;
+    } else if (number == 12){
+        return self.originalVideo;
+    } else if (number == 13){
+        return self.persuader;
+    } else {
+        return nil;
+    }
 }
 
 
 - (void)slideSwitchView:(SUNSlideSwitchView *)view didselectTab:(NSUInteger)number
 {
     
-    UIViewController *vc = _viewController[number];
+    NewestViewController *newestVC = nil;
+    NewsflashViewController *newestFlashVC = nil;
+    VideoViewController *videoVC = nil;
+    VideoViewController *newsVC = nil;
+    VideoViewController *evaluatingVC = nil;
+    VideoViewController *shoppingVC = nil;
+    VideoViewController *marketVC = nil;
+    VideoViewController *carVC = nil;
+    VideoViewController *technologyVC = nil;
+    VideoViewController *cultureVC = nil;
+    VideoViewController *refitVC = nil;
+    VideoViewController *travelNotesVC = nil;
+    VideoViewController *originalVideoVC = nil;
+    VideoViewController *persuaderVC = nil;
+    
+    if (number == 0) {
+        newestVC = self.newest;
+    } else if (number == 1){
+        newestFlashVC = self.newestFlash;
+    } else if (number == 2){
+        videoVC = self.video;
+    } else if (number == 3){
+        newsVC = self.news;
+    } else if (number == 4){
+        evaluatingVC = self.evaluating;
+    } else if (number == 5){
+        shoppingVC = self.shopping;
+    } else if (number == 6){
+        marketVC = self.market;
+    } else if (number == 7){
+        carVC = self.car;
+    } else if (number == 8){
+        technologyVC = self.technology;
+    } else if (number == 9){
+        cultureVC = self.culture;
+    } else if (number == 10){
+        refitVC = self.refit;
+    } else if (number == 11){
+        travelNotesVC = self.travelNotes;
+    } else if (number == 12){
+        originalVideoVC = self.originalVideo;
+    } else if (number == 13){
+        persuaderVC = self.persuader;
+    }
     
     
 }

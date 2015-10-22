@@ -2,11 +2,11 @@
 //  TSHeaderView.h
 //  Carhome
 //
-//  Created by wz on 15-10-21.
+//  Created by wz on 15-10-22.
 //  Copyright (c) 2015年 wz. All rights reserved.
 //
+
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 
 @protocol TSHeaderViewDelegate <NSObject>
 
@@ -15,7 +15,8 @@
 
 @end
 
-@interface TSHeaderView : NSObject
+@interface TSHeaderView : UIView
+
 
 /**
  *  根据传入的图片URL数组，创建自动循环滚动的视图

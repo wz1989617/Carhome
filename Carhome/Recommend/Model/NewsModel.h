@@ -19,10 +19,12 @@
  
  */
 
-@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *time;
-@property (strong, nonatomic) NSString *smallpic;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *time;
+@property (copy, nonatomic) NSString *imgurl;
+@property (copy, nonatomic) NSString *smallpic;
 @property (strong, nonatomic) NSString *replycount;
+@property (strong, nonatomic) NSString *updatetime;
 
 
 

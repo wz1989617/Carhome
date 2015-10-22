@@ -16,7 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    RecommendViewController *leftVC = [[RecommendViewController alloc]
+//                                         initWithNibName:@"RecommendViewController"
+//                                         bundle:nil];
+//    
+//    [self.window setRootViewController:leftVC.newest];
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 

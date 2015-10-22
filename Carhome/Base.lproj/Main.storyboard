@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8a5-cv-tav" kind="relationship" relationship="viewControllers" id="XSo-0K-1Tp"/>
+                        <segue destination="460-LF-aec" kind="relationship" relationship="viewControllers" id="upI-LU-9u3"/>
                         <segue destination="t4b-3v-hvc" kind="relationship" relationship="viewControllers" id="Ktp-0N-RXD"/>
                         <segue destination="ohv-Ky-xDJ" kind="relationship" relationship="viewControllers" id="cSh-Mb-mEz"/>
                         <segue destination="Pi1-UV-2hh" kind="relationship" relationship="viewControllers" id="Rez-eM-UbT"/>
@@ -26,15 +26,43 @@
             </objects>
             <point key="canvasLocation" x="-244" y="18"/>
         </scene>
-        <!--News View Controller-->
-        <scene sceneID="2F6-js-ZLw">
+        <!--Recommend View Controller-->
+        <scene sceneID="UxJ-v7-iUT">
             <objects>
-                <viewController id="8a5-cv-tav" customClass="NewsViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="item01" id="7rc-YV-lza"/>
+                <viewController id="460-LF-aec" customClass="RecommendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9N0-vm-ykg"/>
+                        <viewControllerLayoutGuide type="bottom" id="YJb-Vr-WTm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gjn-LW-qbf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRm-Py-ruA" customClass="SUNSlideSwitchView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="slideSwitchViewDelegate" destination="460-LF-aec" id="dlI-Cu-5DN"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jRm-Py-ruA" secondAttribute="trailing" id="08J-wF-e5w"/>
+                            <constraint firstItem="jRm-Py-ruA" firstAttribute="leading" secondItem="gjn-LW-qbf" secondAttribute="leading" id="0Y5-eA-qTl"/>
+                            <constraint firstItem="jRm-Py-ruA" firstAttribute="top" secondItem="9N0-vm-ykg" secondAttribute="bottom" id="VTl-H8-c7w"/>
+                            <constraint firstItem="YJb-Vr-WTm" firstAttribute="top" secondItem="jRm-Py-ruA" secondAttribute="bottom" id="blf-ca-gW3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="item01" id="MA4-zB-nwG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="slideSwitchView" destination="jRm-Py-ruA" id="fbm-tn-cmI"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XaN-Hf-A78" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E36-vr-2un" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-823" y="766"/>
+            <point key="canvasLocation" x="-837" y="766"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CEc-dS-uu4">

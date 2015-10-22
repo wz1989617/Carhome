@@ -16,6 +16,7 @@
 #define TScreenWidth [UIScreen mainScreen].bounds.size.width
 #define TScreenHeight [UIScreen mainScreen].bounds.size.height
 #import "SUNSlideSwitchView.h"
+#import "UIImageView+WebCache.h"
 
 
 #endif

@@ -9,8 +9,9 @@
 #import "NewsCell.h"
 #import "UIImageView+WebCache.h"
 
+
 @interface NewsCell ()
-@property (weak, nonatomic) IBOutlet UIView *titleImageView;
+
 @property (weak, nonatomic) IBOutlet UILabel *headlineLabei;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabei;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabei;
@@ -27,8 +28,8 @@
     _model = model;
     self.headlineLabei.text = _model.title;
     self.timeLabei.text = _model.time;
-    self.commentLabei.text = _model.replycount;
-    self.titleImageView = [UIImage imageNamed:_model.smallpic];
+    self.commentLabei.text = _model.updatetime;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
