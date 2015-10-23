@@ -64,6 +64,7 @@
 		1530670F1BDA2EF400F3439D /* NewsflashTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1530670D1BDA2EF400F3439D /* NewsflashTableViewCell.m */; };
 		153067101BDA2EF400F3439D /* NewsflashTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1530670E1BDA2EF400F3439D /* NewsflashTableViewCell.xib */; };
 		153067131BDA307F00F3439D /* NewsflashModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 153067121BDA307F00F3439D /* NewsflashModel.m */; };
+		153067161BDA573E00F3439D /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153067151BDA573E00F3439D /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +187,8 @@
 		1530670E1BDA2EF400F3439D /* NewsflashTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsflashTableViewCell.xib; sourceTree = "<group>"; };
 		153067111BDA307F00F3439D /* NewsflashModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsflashModel.h; sourceTree = "<group>"; };
 		153067121BDA307F00F3439D /* NewsflashModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsflashModel.m; sourceTree = "<group>"; };
+		153067141BDA573E00F3439D /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		153067151BDA573E00F3439D /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -549,6 +552,8 @@
 				1502BCED1BD72B70006BB63B /* NewestViewController.h */,
 				1502BCEE1BD72B70006BB63B /* NewestViewController.m */,
 				1502BCEF1BD72B70006BB63B /* NewestViewController.xib */,
+				153067141BDA573E00F3439D /* DetailsViewController.h */,
+				153067151BDA573E00F3439D /* DetailsViewController.m */,
 				1502BCF51BD72BC8006BB63B /* NewsflashViewController.h */,
 				1502BCF61BD72BC8006BB63B /* NewsflashViewController.m */,
 				1502BCF71BD72BC8006BB63B /* NewsflashViewController.xib */,
@@ -713,6 +718,7 @@
 				1502BCEB1BD7284D006BB63B /* RecommendViewController.m in Sources */,
 				1502BC811BD61FE6006BB63B /* AFHTTPSessionManager.m in Sources */,
 				1502BC671BD61E33006BB63B /* UIImage+WebP.m in Sources */,
+				153067161BDA573E00F3439D /* DetailsViewController.m in Sources */,
 				1502BC821BD61FE6006BB63B /* AFNetworkReachabilityManager.m in Sources */,
 				1502BC691BD61E33006BB63B /* UIImageView+WebCache.m in Sources */,
 				1502BC801BD61FE6006BB63B /* AFHTTPRequestOperationManager.m in Sources */,
