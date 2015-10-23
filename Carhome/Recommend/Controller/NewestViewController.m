@@ -7,38 +7,44 @@
 //
 
 #import "NewestViewController.h"
-#import "AFNetworking.h"
 #import "TokenModel.h"
 #import "AchiverToken.h"
 #import "NewsModel.h"
 #import "JsonData.h"
 #import "TSHeaderView.h"
+#import "NewestTableViewCell.h"
+#import "HeadlineinfoModel.h"
 
 
 
-@interface NewestViewController ()<TSHeaderViewDelegate>{
+@interface NewestViewController ()<TSHeaderViewDelegate,UITableViewDataSource,UITableViewDelegate>
+{
 
     NSMutableArray *_bannerLinkURLs; // 头视图的链接地址
+
     
 }
 
 @property (weak, nonatomic) IBOutlet TSHeaderView *newsHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (strong, nonatomic)NSMutableArray *newsModelArray;
 
 
 @end
 
+static NSString *cellID = @"newestTableViewCell";
 @implementation NewestViewController
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
+//    [self tableView];
     [self loadNewestData];
-//    [self loadHeaderViewNewsData];
+    
+    // 注册单元格
+    [self.tableView registerNib:[UINib nibWithNibName:@"NewestTableViewCell" bundle:nil] forCellReuseIdentifier:cellID];
 
 }
 
@@ -46,8 +52,7 @@
 - (void)loadNewestData{
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [manager GET:HomeWeiboURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:HomeWeiboURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [self fromDicToModel:responseObject];
         
@@ -63,14 +68,19 @@
     NSMutableArray *bannerImageURLs = [NSMutableArray array];
     
     for (NSDictionary *newsDic in dic[@"result"][@"focusimg"]) {
-
         
         NewsModel *model = [[NewsModel alloc] initWithDictionary:newsDic];
         [bannerImageURLs addObject:model.imgurl];
-        NSLog(@"+++%@",bannerImageURLs);
-        
-        
+
     }
+    
+    for (NSDictionary *headDic in dic[@"result"][@"newslist"]) {
+        HeadlineinfoModel *headModel = [[HeadlineinfoModel alloc] initWithDictionary:headDic];
+        
+        [self.newsModelArray addObject:headModel];
+    }
+
+    [self.tableView reloadData];
     
     [_newsHeaderView headerViewWithImageURLs:bannerImageURLs titles:nil];
     _newsHeaderView.delegate = self;
@@ -79,10 +89,25 @@
     _newsHeaderView.currentPageColor = [UIColor whiteColor];
 }
 
+#pragma mark - <UITableViewDataSource,UITableViewDelegate>
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.newsModelArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NewestTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    cell.model = self.newsModelArray[indexPath.row];
+    return cell;
+}
 
 
-
-
+#pragma mark - 计算cell高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
 
 
 

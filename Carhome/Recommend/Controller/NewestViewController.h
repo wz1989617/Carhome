@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface NewestViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface NewestViewController : UIViewController
+
+
 
 @end

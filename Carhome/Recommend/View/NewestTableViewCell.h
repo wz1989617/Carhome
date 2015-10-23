@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class HeadlineinfoModel;
 
 @interface NewestTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) HeadlineinfoModel *model;
+
+
 
 @end

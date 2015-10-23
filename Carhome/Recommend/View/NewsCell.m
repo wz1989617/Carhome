@@ -10,11 +10,9 @@
 #import "UIImageView+WebCache.h"
 
 
+
 @interface NewsCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *headlineLabei;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabei;
-@property (weak, nonatomic) IBOutlet UILabel *commentLabei;
 
 @end
 
@@ -26,9 +24,6 @@
 
 - (void)setModel:(NewsModel *)model{
     _model = model;
-    self.headlineLabei.text = _model.title;
-    self.timeLabei.text = _model.time;
-    self.commentLabei.text = _model.updatetime;
 
 }
 

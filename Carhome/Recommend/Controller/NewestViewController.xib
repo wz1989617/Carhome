@@ -23,6 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </view>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="WU4-xt-9zq"/>
+                        <outlet property="delegate" destination="-1" id="AdA-0X-P8V"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,6 +36,7 @@
                 <constraint firstItem="jhh-i5-4LH" firstAttribute="top" secondItem="pKQ-AU-yXV" secondAttribute="top" id="PlS-7D-6J5"/>
                 <constraint firstItem="jhh-i5-4LH" firstAttribute="leading" secondItem="pKQ-AU-yXV" secondAttribute="leading" id="SLd-6f-JHE"/>
             </constraints>
+            <point key="canvasLocation" x="206" y="143"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
